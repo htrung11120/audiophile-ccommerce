@@ -18,7 +18,10 @@ export default function ItemsSection() {
           <p className="mt-20 text-[15px] font-bold uppercase leading-[1.1px]">
             Headphones
           </p>
-          <NavLink className="mt-5 flex flex-row items-center justify-center gap-1 text-[13px] font-bold uppercase opacity-50">
+          <NavLink
+            to="/headphones"
+            className="mt-5 flex flex-row items-center justify-center gap-1 text-[13px] font-bold uppercase opacity-50"
+          >
             Shop <IoIosArrowForward className="fill-[#D87D4A]" />
           </NavLink>
         </div>
@@ -33,7 +36,10 @@ export default function ItemsSection() {
           <p className="mt-20 text-[15px] font-bold uppercase leading-[1.1px]">
             Earphones
           </p>
-          <NavLink className="mt-5 flex flex-row items-center justify-center gap-1 text-[13px] font-bold uppercase opacity-50">
+          <NavLink
+            to="/earphones"
+            className="mt-5 flex flex-row items-center justify-center gap-1 text-[13px] font-bold uppercase opacity-50"
+          >
             Shop <IoIosArrowForward className="fill-[#D87D4A]" />
           </NavLink>
         </div>
@@ -48,7 +54,10 @@ export default function ItemsSection() {
           <p className="mt-20 text-[15px] font-bold uppercase leading-[1.1px]">
             Speakers
           </p>
-          <NavLink className="mt-5 flex flex-row items-center justify-center gap-1 text-center text-[13px] font-bold uppercase opacity-50">
+          <NavLink
+            to="/speakers"
+            className="mt-5 flex flex-row items-center justify-center gap-1 text-center text-[13px] font-bold uppercase opacity-50"
+          >
             Shop <IoIosArrowForward className="fill-[#D87D4A]" />
           </NavLink>
         </div>

@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import speakersImg from "../assets/home/mobile/image-speaker-zx9.png";
 
 export default function Z9xSpeakerCard() {
+  const navigate = useNavigate();
   return (
     <div className="relative mx-6 mt-32 flex h-[37.5rem] flex-col  items-center rounded-lg bg-[#D87D4A] text-white">
       <div className="flex h-[20rem] w-[20rem] items-center justify-center rounded-full border border-white ">
@@ -15,7 +17,10 @@ export default function Z9xSpeakerCard() {
         Upgrade to premium speakers that are phenomenally built to deliver truly
         remarkable sound.
       </p>
-      <button className="absolute bottom-10 h-12 w-40 bg-black text-center text-[13px] font-bold uppercase">
+      <button
+        onClick={() => navigate("/detail/zx9-speaker")}
+        className="absolute bottom-10 h-12 w-40 bg-black text-center text-[13px] font-bold uppercase"
+      >
         see product
       </button>
       <div className="absolute  bottom-40 flex h-[560px] w-[560px] items-center justify-center rounded-full border-b border-white"></div>

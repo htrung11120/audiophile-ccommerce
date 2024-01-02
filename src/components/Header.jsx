@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 export default function Header() {
   return (
-    <div className="bg-home-mobile-header h-screen bg-contain">
+    <div className="h-screen bg-home-mobile-header bg-contain">
       <Navbar />
       <HomeIntro />
     </div>

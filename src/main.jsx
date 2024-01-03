@@ -6,13 +6,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import { AppProvider } from "./contexts/DataContext.jsx";
+import { DataProvider } from "./contexts/DataContext.jsx";
 import Home from "./Pages/Home.jsx";
 import Headphones from "./Pages/Headphones.jsx";
 import Speakers from "./Pages/Speakers.jsx";
 import Earphones from "./Pages/Earphones.jsx";
 import ItemDetail from "./components/ItemDetail.jsx";
 import ItemDescription from "./components/ItemDescription.jsx";
+import Checkout from "./Pages/Checkout.jsx";
 const router = createBrowserRouter([
   {
     path: "/home",
@@ -45,11 +46,16 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/checkout",
+    element: <Checkout />,
+  },
+  ,
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AppProvider>
+    <DataProvider>
       <RouterProvider router={router} />
-    </AppProvider>
+    </DataProvider>
   </React.StrictMode>,
 );

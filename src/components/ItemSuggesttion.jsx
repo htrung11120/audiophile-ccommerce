@@ -2,8 +2,6 @@ import React from "react";
 import OrangeButton from "./OrangeButton";
 
 export default function ItemSuggesttion({ suggestItem }) {
-  console.log(suggestItem);
-
   return (
     <div>
       <div className="mt-24">
@@ -11,7 +9,6 @@ export default function ItemSuggesttion({ suggestItem }) {
           you may also like
         </p>
         {suggestItem.map((el) => {
-          console.log(el);
           return (
             <div
               key={el.id}

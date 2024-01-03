@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function OrangeButton({ data }) {
   const navigate = useNavigate();
-  console.log(data);
   return (
     <div>
       <button

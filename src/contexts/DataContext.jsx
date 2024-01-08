@@ -62,7 +62,9 @@ export const DataProvider = ({ children }) => {
       case "REMOVE_ALL": {
         return { ...state, cart: [] };
       }
-
+      case "SET_GRANDTOTAL": {
+        return { ...state, grandTotal: action.grandtotal };
+      }
       default: {
         throw new Error("unknown action: " + action.type);
       }

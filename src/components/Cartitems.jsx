@@ -15,12 +15,20 @@ export default function CartItems() {
     updatedQuantities[index] = Math.max(1, updatedQuantities[index] - 1);
     setQuantities(updatedQuantities);
 
-    const updatedCart = [...state.cart];
-    updatedCart[index].quantity = updatedQuantities[index];
-    setCartQuantity(updatedCart);
+    if (updatedQuantities[index] === 1) {
+      // If the quantity becomes 1 or less, remove the item from the cart
+      const updatedCart = [...state.cart];
+      updatedCart.splice(index, 1);
+      setCartQuantity(updatedCart);
+    } else {
+      // Update the quantity in the cart
+      const updatedCart = [...state.cart];
+      updatedCart[index].quantity = updatedQuantities[index];
+      setCartQuantity(updatedCart);
+    }
+
     calculateTotal();
   };
-
   const addQuantity = (index) => {
     const updatedQuantities = [...quantities];
     updatedQuantities[index] += 1;
@@ -37,7 +45,7 @@ export default function CartItems() {
       return total + item.price * item.quantity;
     }, 0);
   };
-
+  console.log(state);
   return (
     <div>
       {state.cart.length === 0 || null ? (

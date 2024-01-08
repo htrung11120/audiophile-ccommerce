@@ -3,38 +3,50 @@ import logo from "../assets/shared/desktop/logo.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import NavModal from "./NavModal";
 import CartModal from "./CartModal";
-import { useGlobalData } from "../contexts/DataContext";
 export default function Navbar() {
-  let [isOpen, setIsOpen] = useState(false);
-  const { state } = useGlobalData();
-  function closeModal() {
-    setIsOpen(false);
-    if (state.cart.length === 0) {
-    } else {
-      setIsOpen(false);
-    }
+  let [isOpenCartModal, setIsOpenCartModal] = useState(false);
+  let [isOpenNavModal, setIsOpenNavModal] = useState(false);
+
+  function closeCartModal() {
+    setIsOpenCartModal(false);
   }
 
-  function openModal() {
-    setIsOpen(true);
+  function openCartModal() {
+    setIsOpenCartModal(true);
+  }
+  function closeNavModal() {
+    setIsOpenNavModal(false);
+  }
+
+  function openNavModal() {
+    setIsOpenNavModal(true);
   }
   return (
     <div>
-      <div className="flex w-screen flex-row items-center justify-between border-b border-white/10 px-6 py-8">
-        <GiHamburgerMenu className="h-8 w-8 fill-white " />
+      <div className=" flex flex-row items-center justify-between border-b border-white/10 px-6 py-8 sm:mx-10">
+        <GiHamburgerMenu
+          className="h-8 w-8 fill-white "
+          onClick={openNavModal}
+        />
         <Link to="/home">
           <img src={logo} />
         </Link>
         <AiOutlineShoppingCart
           className="h-8 w-8 fill-white "
-          onClick={openModal}
+          onClick={openCartModal}
         />
       </div>
       <CartModal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        setIsOpen={setIsOpen}
+        isOpen={isOpenCartModal}
+        closeModal={closeCartModal}
+        setIsOpen={setIsOpenCartModal}
+      />
+      <NavModal
+        isOpen={isOpenNavModal}
+        closeModal={closeNavModal}
+        setIsOpen={setIsOpenNavModal}
       />
     </div>
   );

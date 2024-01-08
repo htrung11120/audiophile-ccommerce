@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Summary from "../components/Summary";
 
 export default function Checkout() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const navigate = useNavigate();
   const [paymentMethods, setPaymentMethods] = useState({
     eMoney: true,
     cashOnDelivery: false,
   });
+
+  function formHandleSubmit(e) {
+    e.preventDefault();
+    setIsModalOpen(true);
+    console.log(isModalOpen);
+    navigate("/checkout/success");
+  }
 
   const handlePaymentMethodChange = (method) => {
     setPaymentMethods({
@@ -33,7 +41,7 @@ export default function Checkout() {
           <p className="mt-12 pl-6 text-[28px] font-bold uppercase tracking-[1px]">
             check out
           </p>
-          <form action="#" className="mx-6 mb-8 ">
+          <form className="mx-6 mb-8" onSubmit={formHandleSubmit}>
             <div>
               <p className="mt-8 text-[13px] font-bold uppercase leading-[25px] tracking-[0.93px] text-[#D87D4A]">
                 billing details
@@ -227,10 +235,18 @@ export default function Checkout() {
         <div>
           <Summary />
         </div>
+        <button
+          type="button"
+          className="text-[13px font-bold] mt-8 h-12 w-full bg-[#D87D4A] text-center uppercase tracking-[1px] text-white"
+          onClick={formHandleSubmit}
+        >
+          CONTINUE & PAY
+        </button>
       </div>
       <div className="mt-24">
         <Footer />
       </div>
+      <Outlet context={[isModalOpen, setIsModalOpen]} />
     </div>
   );
 }

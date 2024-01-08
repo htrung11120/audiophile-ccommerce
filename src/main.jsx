@@ -14,6 +14,7 @@ import Earphones from "./Pages/Earphones.jsx";
 import ItemDetail from "./components/ItemDetail.jsx";
 import ItemDescription from "./components/ItemDescription.jsx";
 import Checkout from "./Pages/Checkout.jsx";
+import Success from "./components/Success.jsx";
 const router = createBrowserRouter([
   {
     path: "/home",
@@ -47,8 +48,14 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/checkout",
+    path: "checkout",
     element: <Checkout />,
+    children: [
+      {
+        path: "success",
+        element: <Success />,
+      },
+    ],
   },
   ,
 ]);

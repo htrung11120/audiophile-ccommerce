@@ -8,7 +8,7 @@ import Z7xSpeakerCard from "../components/ZX7SpeakerCard";
 import ScrollToTop from "../utils/scrollTotop";
 export default function Home() {
   return (
-    <div className="overflow-hidden scroll-smooth">
+    <div className=" overflow-hidden scroll-smooth">
       <ScrollToTop />
       <Header />
       <ItemsSection />

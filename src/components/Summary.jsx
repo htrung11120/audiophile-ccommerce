@@ -1,21 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useGlobalData } from "../contexts/DataContext";
 
 export default function Summary() {
-  const { state } = useGlobalData();
+  const { state, dispatch } = useGlobalData();
   const substringsToRemove = ["headphones", "speaker", "earphones"];
-
-  const calculateTotal = () => {
-    return state.cart.reduce((total, item) => {
-      return total + item.price * item.quantity;
-    }, 0);
-  };
-
-  const [total, setTotal] = useState(calculateTotal());
-  const [vat, setVat] = useState(total * 0.1);
-  const [grandTotal, setGrandTotal] = useState(total + 50 + total * 0.1);
-
   const cartItems = state.cart;
+
+  const [total, setTotal] = useState(0);
+  const [vat, setVat] = useState(0);
+  const [grandTotal, setGrandTotal] = useState(0);
+
+  useEffect(() => {
+    const calculateTotal = () => {
+      return cartItems.reduce((total, item) => {
+        return total + item.price * item.quantity;
+      }, 0);
+    };
+
+    const totalAmount = calculateTotal();
+    const vatAmount = totalAmount * 0.1;
+    const shippingCost = cartItems.length > 0 ? 50 : 0;
+
+    const grandTotalAmount = totalAmount + shippingCost + vatAmount;
+
+    setTotal(totalAmount);
+    setVat(vatAmount);
+    setGrandTotal(grandTotalAmount);
+
+    dispatch({ type: "SET_GRANDTOTAL", grandtotal: grandTotalAmount });
+  }, [cartItems]);
 
   return (
     <div className="mx-6">
@@ -65,7 +78,9 @@ export default function Summary() {
           <p className="text-[15px] uppercase leading-[25px] opacity-50">
             Shipping
           </p>
-          <p className="text-lg font-bold uppercase">$50.00</p>
+          <p className="text-lg font-bold uppercase">
+            {cartItems.length === 0 ? "$ 0.00" : "$ 50.00"}
+          </p>
         </div>
         <div className="mb-2 flex  flex-row justify-between">
           <p className="text-[15px] uppercase leading-[25px] opacity-50">
@@ -82,9 +97,6 @@ export default function Summary() {
           </p>
         </div>
       </div>
-      <button className="text-[13px font-bold] mt-8 h-12 w-full bg-[#D87D4A] text-center uppercase tracking-[1px] text-white">
-        CONTINUE & PAY
-      </button>
     </div>
   );
 }

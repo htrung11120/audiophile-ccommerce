@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function HomeIntro() {
   return (
-    <div className="mt-[108px] flex flex-col items-center justify-center text-white">
-      <p className="text-sm tracking-10px opacity-50">NEW PRODUCT</p>
-      <p className="mt-4 text-center text-4xl font-bold uppercase leading-10 tracking-[1.3px]">
+    <div className="mt-28  flex flex-col items-center justify-center  text-white">
+      <p className="text-sm font-normal tracking-10px opacity-50  ">
+        NEW PRODUCT
+      </p>
+      <p className="mt-4 text-center text-4xl font-bold uppercase leading-10 tracking-[1.3px] sm:w-[400px] sm:text-[56px] sm:leading-[58px] sm:tracking-[2px]">
         XX99 Mark II HeadphoneS
       </p>
-      <p className="mx-6 mt-6 text-center text-[15px] font-medium opacity-75">
+      <p className="mx-6 mt-6  text-center text-[15px] font-medium opacity-75 sm:w-[350px]">
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>

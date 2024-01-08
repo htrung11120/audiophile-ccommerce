@@ -23,7 +23,7 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center  text-center">
+            <div className="flex min-h-full  items-center justify-center text-center  sm:mt-24 sm:items-start">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -33,10 +33,10 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="my-24 w-full max-w-md transform overflow-hidden  rounded-2xl bg-white pb-9 pt-16  text-left align-middle shadow-xl transition-all">
-                  <div className="mt-10 flex flex-col items-center justify-center gap-12">
+                <Dialog.Panel className="my-24 w-full transform overflow-hidden  bg-white  pb-9 pt-16 text-left align-middle shadow-xl transition-all  sm:m-0 sm:my-0 sm:pb-0 sm:pt-0">
+                  <div className="mt-28 flex flex-col items-center justify-center gap-12 sm:mx-10 sm:flex-row sm:gap-4">
                     <div className="mb-8">
-                      <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]">
+                      <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]  sm:w-56">
                         <img
                           src={headphonesThumbnail}
                           alt="Headphones Thumbnail"
@@ -53,8 +53,27 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
                         </NavLink>
                       </div>
                     </div>
+
                     <div className="mb-8">
-                      <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]">
+                      <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]  sm:w-56">
+                        <img
+                          src={speakersThumbnail}
+                          alt="Speaker Thumbnail"
+                          className="absolute top-[-60px] h-40 w-40"
+                        />
+                        <p className="mt-20 text-[15px] font-bold uppercase leading-[1.1px]">
+                          Earphones
+                        </p>
+                        <NavLink
+                          to="/speakers"
+                          className="mt-5 flex flex-row items-center justify-center gap-1 text-[13px] font-bold uppercase opacity-50"
+                        >
+                          Shop <IoIosArrowForward className="fill-[#D87D4A]" />
+                        </NavLink>
+                      </div>
+                    </div>
+                    <div className="mb-8">
+                      <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]  sm:w-56">
                         <img
                           src={earphonesThumbnail}
                           alt="Earphones Thumbnail"
@@ -66,24 +85,6 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
                         <NavLink
                           to="/earphones"
                           className="mt-5 flex flex-row items-center justify-center gap-1 text-[13px] font-bold uppercase opacity-50"
-                        >
-                          Shop <IoIosArrowForward className="fill-[#D87D4A]" />
-                        </NavLink>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]">
-                        <img
-                          src={speakersThumbnail}
-                          alt="Speakers Thumbnail"
-                          className="absolute top-[-60px] h-40 w-40"
-                        />
-                        <p className="mt-20 text-[15px] font-bold uppercase leading-[1.1px]">
-                          Speakers
-                        </p>
-                        <NavLink
-                          to="/speakers"
-                          className="mt-5 flex flex-row items-center justify-center gap-1 text-center text-[13px] font-bold uppercase opacity-50"
                         >
                           Shop <IoIosArrowForward className="fill-[#D87D4A]" />
                         </NavLink>

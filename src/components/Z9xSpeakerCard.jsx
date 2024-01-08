@@ -4,7 +4,7 @@ import speakersImg from "../assets/home/mobile/image-speaker-zx9.png";
 export default function Z9xSpeakerCard() {
   const navigate = useNavigate();
   return (
-    <div className="relative mx-6 mt-32 flex h-[37.5rem] flex-col items-center  rounded-lg bg-[#D87D4A] text-white sm:h-[45rem]">
+    <div className="relative -z-40 mx-6 mt-32 flex h-[37.5rem] flex-col items-center  rounded-lg bg-[#D87D4A] text-white sm:h-[45rem]">
       <div className="absolute top-[-5px] flex  h-[20rem] w-[20rem] items-center justify-center rounded-full border border-white/30 sm:top-[-100px] sm:h-[542px] sm:w-[542px] ">
         <div className="flex h-[17.5rem]  w-[17.5rem] items-center justify-center rounded-full border border-white/30 sm:h-[472px] sm:w-[472px]">
           <img src={speakersImg} alt="" className="h-52 w-44 sm:h-60 sm:w-52" />
@@ -23,7 +23,7 @@ export default function Z9xSpeakerCard() {
       >
         see product
       </button>
-      <div className="absolute  bottom-40 flex h-[560px] w-[420px] items-center  justify-center rounded-full border-b border-white/40 sm:bottom-16 sm:h-[56rem] sm:w-[56rem] "></div>
+      <div className="absolute  bottom-40 flex  h-full w-full items-center  justify-center rounded-full border-b border-white/40 sm:bottom-16  "></div>
     </div>
   );
 }

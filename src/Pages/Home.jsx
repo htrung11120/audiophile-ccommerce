@@ -8,9 +8,12 @@ import Z7xSpeakerCard from "../components/ZX7SpeakerCard";
 import ScrollToTop from "../utils/scrollTotop";
 export default function Home() {
   return (
-    <div className=" overflow-hidden scroll-smooth">
+    <div className=" scroll-smooth">
       <ScrollToTop />
-      <Header />
+      <div className="bg-black">
+        <Header />
+      </div>
+
       <ItemsSection />
       <div className="flex flex-col gap-6">
         <Z9xSpeakerCard />

@@ -42,7 +42,7 @@ export default function MyModal() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4">
+            <div className="flex min-h-full items-center justify-center  sm:mt-24 sm:items-start">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -52,60 +52,63 @@ export default function MyModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className=" transform overflow-hidden rounded-2xl bg-white p-8  shadow-xl transition-all">
+                <Dialog.Panel className=" transform overflow-hidden rounded-2xl bg-white p-8  shadow-xl transition-all sm:p-12">
                   <Dialog.Title
                     as="h3"
                     className="w-full text-lg font-medium leading-6 text-gray-900"
                   >
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#D87D4A]">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#D87D4A] sm:mb-9">
                       <IoMdCheckmark className="h-8 w-8 fill-white" />
                     </div>
                   </Dialog.Title>
                   <div className="pt-6">
-                    <p className="text-2xl font-bold uppercase leading-7 tracking-[0.9px]">
+                    <p className="text-2xl font-bold uppercase leading-7 tracking-[0.9px] sm:w-[330px] sm:text-[32px] sm:leading-9 sm:tracking-[1.143px]">
                       THANK YOU FOR YOUR ORDER
                     </p>
-                    <p className="mt-4 text-[15px] leading-[25px]">
+                    <p className="mt-4 text-[15px] leading-[25px] sm:mb-8">
                       You will receive an email confirmation shortly.
                     </p>
                   </div>
 
-                  <div>
-                    <div className="mt-6 flex flex-col rounded-lg bg-[#F1F1F1] px-8 pb-7 pt-8">
-                      <div className="flex w-full flex-row justify-between border-b border-black/20 pb-3">
-                        <div className=" flex flex-row justify-between  ">
-                          <img
-                            className="mr-7 h-12 w-12"
-                            src={cartItem[0].cartImg}
-                            alt=""
-                          />
-                          <div className="flex flex-col">
-                            <p className="text-[15px] font-bold uppercase leading-6">
-                              {cartItem[0].name
-                                .replace(
-                                  new RegExp(
-                                    substringsToRemove.join("|"),
-                                    "gi",
-                                  ),
-                                  "",
-                                )
-                                .trim()}
-                            </p>
-                            <p className="mt-1 text-sm opacity-50">
-                              ${cartItem[0].price}
-                            </p>
+                  <div className="flex flex-col sm:flex-row">
+                    <div>
+                      <div className="mt-6 flex  flex-col rounded-lg bg-[#F1F1F1] px-8 pb-7 pt-8 sm:mt-0 sm:rounded-lg">
+                        <div className="flex w-full flex-row justify-between border-b border-black/20 pb-3">
+                          <div className=" flex flex-row justify-between  ">
+                            <img
+                              className="mr-7 h-12 w-12"
+                              src={cartItem[0].cartImg}
+                              alt=""
+                            />
+                            <div className="flex flex-col">
+                              <p className="text-[15px] font-bold uppercase leading-6">
+                                {cartItem[0].name
+                                  .replace(
+                                    new RegExp(
+                                      substringsToRemove.join("|"),
+                                      "gi",
+                                    ),
+                                    "",
+                                  )
+                                  .trim()}
+                              </p>
+                              <p className="mt-1 text-sm opacity-50">
+                                ${cartItem[0].price}
+                              </p>
+                            </div>
                           </div>
+                          <p className="">x{cartItem[0].quantity}</p>
                         </div>
-                        <p className="">x{cartItem[0].quantity}</p>
+                        <p className="mt-3 text-center text-[12px] font-bold tracking-[-0.214px] opacity-50">
+                          and {cartItem.length - 1} other item(s)
+                        </p>
                       </div>
-                      <p className="mt-3 text-center text-[12px] font-bold tracking-[-0.214px] opacity-50">
-                        and {cartItem.length - 1} other item(s)
-                      </p>
                     </div>
-                    <div className="rounded-b-lg bg-black  px-6 text-white">
-                      <p className="pb-2 pt-4 text-[15px] font-medium leading-6 opacity-50 ">
+                    <div className="sm:rounded-tb-lg flex flex-col rounded-b-lg bg-black px-6 text-white sm:items-center sm:justify-center  sm:rounded-b-none sm:rounded-tr-lg">
+                      <p className="pb-2 pt-4 text-[15px] font-medium leading-6 opacity-50 sm:pt-0 ">
                         GRAND TOTAL
                       </p>
+
                       <p className="pb-5 text-lg font-bold uppercase">
                         $ {calculateTotal()}
                       </p>
@@ -114,7 +117,7 @@ export default function MyModal() {
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="h-12 w-full bg-[#D87D4A] text-center text-[13px] font-bold uppercase tracking-[1px] text-white"
+                      className="h-12 w-full bg-[#D87D4A] text-center text-[13px] font-bold uppercase tracking-[1px] text-white sm:mt-12"
                       onClick={backToHome}
                     >
                       BACK TO HOME

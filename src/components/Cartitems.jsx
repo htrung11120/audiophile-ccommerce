@@ -47,7 +47,7 @@ export default function CartItems() {
   };
   console.log(state);
   return (
-    <div>
+    <div className="flex flex-col sm:gap-4">
       {state.cart.length === 0 || null ? (
         <p>The cart is empty now.</p>
       ) : (
@@ -57,15 +57,17 @@ export default function CartItems() {
             .trim();
 
           return (
-            <div key={index} className="mb-6 flex h-16 w-16 flex-row ">
-              <img src={item.cartImg} className="" alt="" />
-              <div className="ml-4 flex w-screen flex-col">
-                <p className="w-28 text-[15px] font-bold leading-[25px] text-black">
-                  {modifiedString}
-                </p>
-                <p className="mt-2 text-sm font-bold leading-[25px] opacity-50">
-                  $ {item.price}
-                </p>
+            <div key={index} className="mb-6 flex  flex-row justify-between ">
+              <div className="flex flex-row">
+                <img src={item.cartImg} className="h-16 w-16" alt="" />
+                <div className="ml-4 flex flex-col">
+                  <p className="w-28 text-[15px] font-bold leading-[25px] text-black">
+                    {modifiedString}
+                  </p>
+                  <p className="mt-2 text-sm font-bold leading-[25px] opacity-50">
+                    $ {item.price}
+                  </p>
+                </div>
               </div>
               <div>
                 <div className="flex h-8 w-24 flex-row items-center justify-center gap-5 bg-[#F1F1F1] ">

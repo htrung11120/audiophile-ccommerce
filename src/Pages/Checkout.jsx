@@ -38,7 +38,7 @@ export default function Checkout() {
           Go Back
         </p>
         <div>
-          <p className="mt-12 pl-6 text-[28px] font-bold uppercase tracking-[1px]">
+          <p className="mt-12 pl-6 text-[28px] font-bold uppercase tracking-[1px] sm:text-[32px]">
             check out
           </p>
           <form className="mx-6 mb-8" onSubmit={formHandleSubmit}>

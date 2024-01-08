@@ -19,8 +19,9 @@ function ItemDescription() {
   const { item: itemId } = useParams();
   const item = data?.find((item) => item.slug === itemId);
   const quantityItem = state.cart.find((cartItem) => cartItem.slug === itemId);
-  const image = item?.categoryImage.mobile;
-
+  const imageMobile = item?.image.mobile;
+  const imageTablet = item?.image.tablet;
+  console.log(imageTablet);
   const addQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
@@ -37,32 +38,43 @@ function ItemDescription() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="mx-6">
+        <div className="mx-6 sm:mx-10">
           <button
-            className="ml-0 mt-4 text-[15px] leading-[25px] opacity-50"
+            className="mb-6 ml-0 mt-4 text-[15px] leading-[25px] opacity-50"
             onClick={() => navigate(-1)}
           >
             Go Back
           </button>
-          <img src={image} alt="" />
-          {item?.new && (
-            <p className="mt-8 text-sm uppercase tracking-[10px] text-[#D87D4A]">
-              new product
-            </p>
-          )}
-          <p className="mt-6 text-[28px] font-bold uppercase ">{item?.name}</p>
-          <p className="mt-6 text-[15px] leading-[25px] opacity-50">
-            {item?.description}
-          </p>
-          <p className="mb-8 mt-6 text-lg font-bold tracking-[1.3px]">
-            ${item?.price}
-          </p>
-          <QuantityControls
-            quantity={quantity}
-            addQuantity={addQuantity}
-            subtractQuantity={subtractQuantity}
-            itemId={itemId}
-          />
+          <div className="flex flex-col sm:flex-row sm:gap-[70px]">
+            <img src={imageMobile} className="rounded-lg sm:hidden" />
+            <img
+              src={imageTablet}
+              className="hidden rounded-lg sm:block sm:h-[480px] sm:w-[280px]"
+            />
+            <div>
+              {item?.new && (
+                <p className="mt-8 text-sm uppercase tracking-[10px] text-[#D87D4A]">
+                  new product
+                </p>
+              )}
+              <p className="mt-6 text-[28px] font-bold uppercase ">
+                {item?.name}
+              </p>
+              <p className="mt-6 text-[15px] leading-[25px] opacity-50">
+                {item?.description}
+              </p>
+              <p className="mb-8 mt-6 text-lg font-bold tracking-[1.3px]">
+                ${item?.price}
+              </p>
+              <QuantityControls
+                quantity={quantity}
+                addQuantity={addQuantity}
+                subtractQuantity={subtractQuantity}
+                itemId={itemId}
+              />
+            </div>
+          </div>
+
           <Features features={item?.features} />
           <InTheBox includeItems={item?.includes} />
           <div>

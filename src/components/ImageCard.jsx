@@ -4,17 +4,20 @@ export default function ImageCard({ galleries }) {
   const gallery3 = galleries.third;
 
   return (
-    <div className=" flex flex-col gap-8">
-      <img
-        src={gallery1.mobile}
-        className="h-44 rounded-lg"
-        alt="Gallery 1 Mobile"
-      />
-      <img
-        src={gallery2.mobile}
-        className="h-44 rounded-lg"
-        alt="Gallery 2 Mobile"
-      />
+    <div className=" flex flex-col gap-8 sm:flex-row">
+      <div className="flex flex-wrap gap-8 sm:flex-row">
+        <img
+          src={gallery1.mobile}
+          className="h-44 w-full rounded-lg sm:w-auto"
+          alt="Gallery 1 Mobile"
+        />
+        <img
+          src={gallery2.mobile}
+          className="h-44 w-full rounded-lg sm:w-auto"
+          alt="Gallery 2 Mobile"
+        />
+      </div>
+
       <img
         src={gallery3.mobile}
         className="h-96 rounded-lg"

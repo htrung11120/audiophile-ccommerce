@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import ItemCard from "../components/ItemCard";
-import CategoryHeader from "../components/CategoryHeader";
 import { useGlobalData } from "../contexts/DataContext";
 import ItemsSection from "../components/ItemsSection";
 import Footer from "../components/Footer";
 import ScrollToTop from "../utils/scrollTotop";
+import CategoryHeader from "../components/CategoryHeader";
+import Introduction from "../components/Introduction";
 export default function Headphones() {
   const { data, loading } = useGlobalData();
   const Xx59Mark = data?.[1];
@@ -15,11 +16,10 @@ export default function Headphones() {
   return (
     <div>
       <ScrollToTop />
-
       <div className="bg-black">
         <Navbar />
+        <CategoryHeader itemName={"headphones"} />
       </div>
-      <CategoryHeader itemName={"headphones"} />
       {loading ? (
         <div>
           <p>The data is loading....</p>
@@ -31,9 +31,11 @@ export default function Headphones() {
           <ItemCard data={Xx59Mark} />
         </div>
       )}
-      <div className="pb-20 pt-12">
+      <div className=" pt-12">
         <ItemsSection />
       </div>
+      <Introduction />
+
       <Footer />
     </div>
   );

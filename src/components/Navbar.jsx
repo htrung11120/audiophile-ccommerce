@@ -28,22 +28,18 @@ export default function Navbar() {
   }
 
   return (
-    <div>
-      <div className="flex flex-row items-center justify-between border-b border-white/20 px-6 py-8 sm:mx-10  sm:px-0">
-        <div>
-          <GiHamburgerMenu
-            className="h-6 w-6 fill-white  md:h-8 md:w-8"
-            onClick={openNavModal}
-          />
-        </div>
-        <div>
-          <Link to="/home">
-            <img src={logo} alt="Company Logo" />
-          </Link>
-        </div>
-        <div>
+    <div className="flex flex-wrap">
+      <div className="flex w-screen flex-row items-center justify-between border-b border-white/20 px-6 py-8 sm:mx-10 sm:px-0">
+        <GiHamburgerMenu
+          className="h-6 w-6 fill-white sm:mr-11 sm:h-8 md:w-8"
+          onClick={openNavModal}
+        />
+        <Link to="/home">
+          <img src={logo} alt="Company Logo" />
+        </Link>
+        <div className="sm:ml-auto">
           <AiOutlineShoppingCart
-            className="h-6 w-6 fill-white md:h-8 md:w-8"
+            className="h-6 w-6 self-center fill-white md:h-8 md:w-8"
             onClick={openCartModal}
           />
         </div>

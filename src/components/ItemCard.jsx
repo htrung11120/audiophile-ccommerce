@@ -14,7 +14,7 @@ export default function ItemCard({ data, reverse = false }) {
       <img
         src={categoryImageTablet}
         alt=""
-        className="hidden rounded-lg  sm:block sm:h-[352px]"
+        className="hidden rounded-lg  sm:block sm:h-[352px] lg:hidden"
       />
       <img
         src={categoryImageDesktop}

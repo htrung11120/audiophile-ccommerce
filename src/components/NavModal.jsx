@@ -1,8 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-import earphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import headphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakersThumbnail from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import { Fragment } from "react";
+// import earphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
+// import headphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
+// import speakersThumbnail from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 export default function NavModal({ isOpen, closeModal, setIsOpen }) {
@@ -38,7 +38,7 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
                     <div className="mb-8">
                       <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]  sm:w-56">
                         <img
-                          src={headphonesThumbnail}
+                          src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
                           alt="Headphones Thumbnail"
                           className="absolute top-[-60px] h-40 w-40"
                         />
@@ -57,7 +57,7 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
                     <div className="mb-8">
                       <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]  sm:w-56">
                         <img
-                          src={speakersThumbnail}
+                          src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
                           alt="Speaker Thumbnail"
                           className="absolute top-[-60px] h-40 w-40"
                         />
@@ -75,7 +75,7 @@ export default function NavModal({ isOpen, closeModal, setIsOpen }) {
                     <div className="mb-8">
                       <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1]  sm:w-56">
                         <img
-                          src={earphonesThumbnail}
+                          src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
                           alt="Earphones Thumbnail"
                           className="absolute top-[-60px] h-40 w-40"
                         />

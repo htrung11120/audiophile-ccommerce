@@ -1,7 +1,7 @@
 import React from "react";
-import earphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import headphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speakersThumbnail from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
+// import earphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
+// import headphonesThumbnail from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
+// import speakersThumbnail from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -12,7 +12,7 @@ export default function ItemsSection() {
       <div className="mb-8">
         <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1] sm:w-56 lg:h-[204px]  lg:w-[350px]">
           <img
-            src={headphonesThumbnail}
+            src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
             alt="Headphones Thumbnail"
             className="absolute top-[-60px] h-40 w-40"
           />
@@ -31,7 +31,7 @@ export default function ItemsSection() {
       <div className="mb-8">
         <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1] sm:w-56 lg:h-[204px]  lg:w-[350px]">
           <img
-            src={speakersThumbnail}
+            src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
             alt="Speaker Thumbnail"
             className="absolute top-[-60px] h-40 w-40"
           />
@@ -49,7 +49,7 @@ export default function ItemsSection() {
       <div className="mb-8">
         <div className="relative flex h-40 w-80 flex-col items-center justify-center rounded-lg bg-[#f1f1f1] sm:w-56 lg:h-[204px]  lg:w-[350px]">
           <img
-            src={earphonesThumbnail}
+            src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
             alt="Earphones Thumbnail"
             className="absolute top-[-60px] h-40 w-40"
           />

@@ -1,4 +1,4 @@
-import logo from "../assets/shared/desktop/logo.svg";
+// import logo from "../assets/shared/desktop/logo.svg";
 import NavList from "./NavList";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { IoLogoTwitter } from "react-icons/io5";
@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex flex-col items-center justify-center  sm:items-start sm:px-10 lg:mx-[165px]">
         <div className="w-28 border-2 border-[#D87D4A]"></div>
         <div className="flex ">
-          <img src={logo} className="my-12 " />
+          <img src="/assets/shared/desktop/logo.svg" className="my-12 " />
           <div className="hidden w-screen  lg:ml-12 lg:flex ">
             <NavList />
           </div>

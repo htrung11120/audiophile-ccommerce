@@ -1,5 +1,5 @@
 import { useState } from "react";
-import cashImg from "../assets/shared/desktop/Shape.svg";
+// import cashImg from "../assets/shared/desktop/Shape.svg";
 export default function PaymentDetails() {
   const [paymentMethods, setPaymentMethods] = useState({
     eMoney: true,
@@ -98,7 +98,7 @@ export default function PaymentDetails() {
             </div>
           ) : (
             <div className="flex flex-row gap-8">
-              <img src={cashImg} alt="" />
+              <img src="/assets/shared/desktop/Shape.svg" alt="" />
               <p className="mr-4 text-[15px] font-medium leading-[25px] opacity-50">
                 The ‘Cash on Delivery’ option enables you to pay in cash when
                 our delivery courier arrives at your residence. Just make sure

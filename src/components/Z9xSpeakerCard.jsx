@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import speakersImgMobile from "../assets/home/mobile/image-speaker-zx9.png";
-import speakersImgTablet from "../assets/home/tablet/image-speaker-zx9.png";
-import speakersImgDesktop from "../assets/home/desktop/image-speaker-zx9.png";
+// import speakersImgMobile from "../assets/home/mobile/image-speaker-zx9.png";
+// import speakersImgTablet from "../assets/home/tablet/image-speaker-zx9.png";
+// import speakersImgDesktop from "../assets/home/desktop/image-speaker-zx9.png";
 
 export default function Z9xSpeakerCard() {
   const navigate = useNavigate();
@@ -12,15 +12,15 @@ export default function Z9xSpeakerCard() {
           <div className="flex h-[280px] w-[280px] items-center justify-center  rounded-full border border-white/50 sm:h-[472px] sm:w-[472px] lg:h-[500px] lg:w-[500px]"></div>
         </div>
         <img
-          src={speakersImgMobile}
+          src="/assets/home/mobile/image-speaker-zx9.png"
           className="absolute top-10 h-52 w-44 sm:hidden  "
         />
         <img
-          src={speakersImgTablet}
+          src="/assets/home/tablet/image-speaker-zx9.png"
           className="absolute top-10 hidden sm:block sm:h-60 sm:w-52 lg:hidden"
         />
         <img
-          src={speakersImgDesktop}
+          src="/assets/home/desktop/image-speaker-zx9.png"
           className="absolute bottom-[-10px] left-32 hidden h-[493px]  w-[410px] lg:block"
         />
       </div>

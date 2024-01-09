@@ -1,7 +1,7 @@
 import { GiHamburgerMenu } from "react-icons/gi";
-import logo from "../assets/shared/desktop/logo.svg";
+// import logo from "../assets/shared/desktop/logo.svg";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import NavModal from "./NavModal";
 import CartModal from "./CartModal";
@@ -35,7 +35,7 @@ export default function Navbar() {
           onClick={openNavModal}
         />
         <Link to="/home">
-          <img src={logo} alt="Company Logo" />
+          <img src="/assets/shared/desktop/logo.svg" alt="Company Logo" />
         </Link>
         <div className="hidden lg:block ">
           <NavList />

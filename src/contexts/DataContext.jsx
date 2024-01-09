@@ -1,7 +1,6 @@
 import { createContext, useContext, useReducer, useState } from "react";
 import useFetchData from "../hooks/useFetchData";
 import cartImg from "../utils/cartImgList";
-import { item1, item2 } from "../utils/initailItemIist";
 const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {

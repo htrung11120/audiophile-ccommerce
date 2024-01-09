@@ -3,15 +3,12 @@ import Navbar from "../components/Navbar";
 import { Outlet, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Summary from "../components/Summary";
-
+import BillingDetails from "../components/BillingDetails";
+import ShippingInfor from "../components/ShippingInfor";
+import PaymentDetails from "../components/PaymentDetails";
 export default function Checkout() {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const navigate = useNavigate();
-  const [paymentMethods, setPaymentMethods] = useState({
-    eMoney: true,
-    cashOnDelivery: false,
-  });
-
   function formHandleSubmit(e) {
     e.preventDefault();
     setIsModalOpen(true);
@@ -19,229 +16,40 @@ export default function Checkout() {
     navigate("/checkout/success");
   }
 
-  const handlePaymentMethodChange = (method) => {
-    setPaymentMethods({
-      ...paymentMethods,
-      [method]: !paymentMethods[method],
-    });
-  };
   return (
-    <div>
+    <div className="overflow-hidden lg:bg-[#f1f1f1]">
       <div className="bg-black">
         <Navbar />
       </div>
-      <div className="mx-6 mt-4">
+      <div className="mx-6 mt-4 lg:mx-[165px]">
         <p
           onClick={() => navigate(-1)}
-          className="text-[15px] leading-[25px] opacity-50"
+          className="text-[15px] leading-[25px] opacity-50 lg:mb-10 lg:mt-20"
         >
           Go Back
         </p>
-        <div>
-          <p className="mt-12 pl-6 text-[28px] font-bold uppercase tracking-[1px] sm:text-[32px]">
-            check out
-          </p>
-          <form className="mx-6 mb-8" onSubmit={formHandleSubmit}>
-            <div>
-              <p className="mt-8 text-[13px] font-bold uppercase leading-[25px] tracking-[0.93px] text-[#D87D4A]">
-                billing details
-              </p>
-              <div className="flex flex-col gap-6">
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="customerName"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="customerName"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="Alexei Ward"
-                  />
-                </div>
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="customerEmail"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="customerEmail"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="alexei@gmail.com"
-                  />
-                </div>
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="customerPhoneNumber"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    type="number"
-                    id="customerPhoneNumber"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="+1 202-555-0136"
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="mt-8 text-[13px] font-bold uppercase leading-[25px] tracking-[0.93px] text-[#D87D4A]">
-                shipping info
-              </p>
-              <div className="flex flex-col gap-6">
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="customerAdress"
-                  >
-                    Your Address
-                  </label>
-                  <input
-                    type="text"
-                    id="customerAdress"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="1137 Williams Avenue"
-                  />
-                </div>
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="zipCode"
-                  >
-                    ZIP Code
-                  </label>
-                  <input
-                    type="number"
-                    id="zipCode"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="10001"
-                  />
-                </div>
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="city"
-                  >
-                    City
-                  </label>
-                  <input
-                    type="text"
-                    id="city"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="New York"
-                  />
-                </div>
-                <div className="font-bold">
-                  <label
-                    className="mt-4 text-[12px] tracking-[-0.214] "
-                    htmlFor="country"
-                  >
-                    Country
-                  </label>
-                  <input
-                    type="text"
-                    id="country"
-                    className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                    placeholder="New York"
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              <p className="mt-8 text-[13px] font-bold uppercase leading-[25px] tracking-[0.93px] text-[#D87D4A]">
-                payment details
-              </p>
-              <div className="flex flex-col gap-6">
-                <div className="font-bold">
-                  <p className="mb-5"> Payment Method</p>
-                  <div className="flex h-14 w-full flex-row items-center gap-6 rounded-lg border pl-4">
-                    <input
-                      type="radio"
-                      id="e-Money"
-                      className={`h-5 w-5 rounded-lg border border-[#CFCFCF] pl-6 text-sm accent-[#D87D4A] ${
-                        paymentMethods.eMoney ? "border-[#D87D4A]" : ""
-                      }`}
-                      defaultChecked={true}
-                      name="paymentMethod"
-                      onChange={() => handlePaymentMethodChange("eMoney")}
-                    />
-                    <label className="text-sm tracking-[-0.]" htmlFor="e-Money">
-                      e-Money
-                    </label>
-                  </div>
-                  <div className="mt-4 flex h-14 w-full flex-row items-center gap-6 rounded-lg border pl-4">
-                    <input
-                      type="radio"
-                      id="cashonDelivery"
-                      name="paymentMethod"
-                      onChange={() =>
-                        handlePaymentMethodChange("cashOnDelivery")
-                      }
-                      className={`h-5 w-5 rounded-lg border border-[#CFCFCF] pl-6 text-sm accent-[#D87D4A] ${
-                        paymentMethods.cashOnDelivery ? "border-[#D87D4A]" : ""
-                      }`}
-                    />
-                    <label
-                      className="text-sm tracking-[-0.]"
-                      htmlFor="cashonDelivery"
-                    >
-                      Cash on Delivery
-                    </label>
-                  </div>
-                </div>
-                {paymentMethods.eMoney ? (
-                  <div>
-                    <div className="font-bold">
-                      <label
-                        className="mt-4 text-[12px] tracking-[-0.214] "
-                        htmlFor="e-MoneyNumber"
-                      >
-                        e-Money Number
-                      </label>
-                      <input
-                        type="number"
-                        id="e-MoneyNumber"
-                        className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                        placeholder="238521993"
-                      />
-                    </div>
-                    <div className="font-bold">
-                      <label
-                        className="mt-4 text-[12px] tracking-[-0.214] "
-                        htmlFor="e-MoneyPIN"
-                      >
-                        e-Money PIN
-                      </label>
-                      <input
-                        type="number"
-                        id="e-MoneyPIN"
-                        className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
-                        placeholder="6891"
-                      />
-                    </div>
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          </form>
+        <div className="lg:flex lg:flex-row lg:gap-8">
+          <div className="lg:w-[800px] lg:rounded-lg lg:bg-[#FFFFFF]">
+            <p className="mt-12 pl-6 text-[28px] font-bold uppercase tracking-[1px] sm:text-[32px] lg:mx-6">
+              check out
+            </p>
+            <form className="mx-6 mb-8 lg:mx-12" onSubmit={formHandleSubmit}>
+              <BillingDetails />
+              <ShippingInfor />
+              <PaymentDetails />
+            </form>
+          </div>
+          <div className="lg:h-[612px] lg:w-[350px] lg:rounded-lg lg:bg-[#FFFFFF] lg:px-8 lg:pt-8">
+            <Summary />
+            <button
+              type="button"
+              className="text-[13px font-bold] mt-8 h-12 w-full cursor-pointer bg-[#D87D4A] text-center uppercase tracking-[1px] text-white hover:bg-[#FBAF85]"
+              onClick={formHandleSubmit}
+            >
+              CONTINUE & PAY
+            </button>
+          </div>
         </div>
-        <div>
-          <Summary />
-        </div>
-        <button
-          type="button"
-          className="text-[13px font-bold] mt-8 h-12 w-full bg-[#D87D4A] text-center uppercase tracking-[1px] text-white"
-          onClick={formHandleSubmit}
-        >
-          CONTINUE & PAY
-        </button>
       </div>
       <div className="mt-24">
         <Footer />

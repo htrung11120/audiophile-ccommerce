@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 export default function ItemDetail() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <div className="bg-black">
         <Navbar />
       </div>

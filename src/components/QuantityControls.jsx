@@ -9,7 +9,7 @@ export default function QuantityControls({
   subtractQuantity,
   itemId,
 }) {
-  const { dispatch, state } = useGlobalData();
+  const { dispatch } = useGlobalData();
   const handleAddQuantity = () => {
     addQuantity();
   };
@@ -35,7 +35,7 @@ export default function QuantityControls({
         <FaPlus className="h-3 w-5 opacity-25" onClick={handleAddQuantity} />
       </div>
       <button
-        className="h-12 w-40 bg-[#D87D4A] text-[13px] font-bold uppercase text-white"
+        className="h-12 w-40 bg-[#D87D4A] text-[13px] font-bold uppercase text-white hover:bg-[#FBAF85]"
         onClick={handleAddToCart}
       >
         Add to Cart

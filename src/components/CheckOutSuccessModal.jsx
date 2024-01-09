@@ -71,9 +71,9 @@ export default function MyModal() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row">
-                    <div>
-                      <div className="mt-6 flex  flex-col rounded-lg bg-[#F1F1F1] px-8 pb-7 pt-8 sm:mt-0 sm:rounded-lg">
-                        <div className="flex w-full flex-row justify-between border-b border-black/20 pb-3">
+                    <div className="">
+                      <div className="mt-6 flex h-[140px] w-[300px] flex-col rounded-lg bg-[#F1F1F1] px-8  pt-8 sm:mt-0 sm:rounded-lg">
+                        <div className="flex  flex-row justify-between border-b border-black/20 pb-3">
                           <div className=" flex flex-row justify-between  ">
                             <img
                               className="mr-7 h-12 w-12"
@@ -97,19 +97,19 @@ export default function MyModal() {
                               </p>
                             </div>
                           </div>
-                          <p className="">x{cartItem[0].quantity}</p>
+                          <p className="pl-11">x{cartItem[0].quantity}</p>
                         </div>
                         <p className="mt-3 text-center text-[12px] font-bold tracking-[-0.214px] opacity-50">
                           and {cartItem.length - 1} other item(s)
                         </p>
                       </div>
                     </div>
-                    <div className="sm:rounded-tb-lg flex flex-col rounded-b-lg bg-black px-6 text-white sm:items-center sm:justify-center  sm:rounded-b-none sm:rounded-tr-lg">
-                      <p className="pb-2 pt-4 text-[15px] font-medium leading-6 opacity-50 sm:pt-0 ">
+                    <div className="flex w-[300px] flex-col rounded-b-lg bg-black px-6 text-white sm:h-[140px] sm:w-[200px] sm:items-center sm:justify-center sm:rounded-b-none  sm:rounded-r-lg sm:rounded-tr-lg">
+                      <p className="self-start pb-2 pt-4 text-[15px] font-medium leading-6 opacity-50 sm:pt-0 ">
                         GRAND TOTAL
                       </p>
 
-                      <p className="pb-5 text-lg font-bold uppercase">
+                      <p className="self-start pb-5 text-lg font-bold uppercase">
                         $ {calculateTotal()}
                       </p>
                     </div>
@@ -117,7 +117,7 @@ export default function MyModal() {
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="h-12 w-full bg-[#D87D4A] text-center text-[13px] font-bold uppercase tracking-[1px] text-white sm:mt-12"
+                      className="h-12 w-full cursor-pointer bg-[#D87D4A] text-center text-[13px] font-bold uppercase tracking-[1px] text-white hover:bg-[#FBAF85] sm:mt-12"
                       onClick={backToHome}
                     >
                       BACK TO HOME

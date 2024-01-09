@@ -64,7 +64,7 @@ const CartModal = ({ closeModal, isOpen }) => {
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="h-12 w-full bg-[#D87D4A] text-[13px] font-bold uppercase tracking-[] text-white"
+                      className="h-12 w-full bg-[#D87D4A] text-[13px] font-bold uppercase tracking-[1px] text-white"
                       onClick={checkout}
                     >
                       checkout

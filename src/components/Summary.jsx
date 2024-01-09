@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useGlobalData } from "../contexts/DataContext";
 
 export default function Summary() {

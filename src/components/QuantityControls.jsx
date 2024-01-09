@@ -1,7 +1,5 @@
-import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useGlobalData } from "../contexts/DataContext";
-import { useParams } from "react-router-dom";
 
 export default function QuantityControls({
   quantity,

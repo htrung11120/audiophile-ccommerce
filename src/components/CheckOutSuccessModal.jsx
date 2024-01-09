@@ -77,12 +77,12 @@ export default function MyModal() {
                           <div className=" flex flex-row justify-between  ">
                             <img
                               className="mr-7 h-12 w-12"
-                              src={cartItem[0].cartImg}
+                              src={cartItem[0]?.cartImg}
                               alt=""
                             />
                             <div className="flex flex-col">
                               <p className="text-[15px] font-bold uppercase leading-6">
-                                {cartItem[0].name
+                                {cartItem[0]?.name
                                   .replace(
                                     new RegExp(
                                       substringsToRemove.join("|"),

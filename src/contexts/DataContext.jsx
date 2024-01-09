@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 import useFetchData from "../hooks/useFetchData";
 import cartImg from "../utils/cartImgList";
 import { item1, item2 } from "../utils/initailItemIist";
@@ -7,7 +7,7 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const { data, loading, error } = useFetchData("/data.json");
+  const { data, loading, error } = useFetchData("/src/data/data.json");
   const [state, dispatch] = useReducer(reducer, {
     cart: [item1, item2],
   });

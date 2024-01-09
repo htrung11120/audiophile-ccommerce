@@ -8,7 +8,7 @@ export const DataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { data, loading, error } = useFetchData("/data/data.json");
   const [state, dispatch] = useReducer(reducer, {
-    cart: [item1, item2],
+    cart: [],
   });
 
   function setCartQuantity(updatedCart) {

@@ -16,7 +16,7 @@ export default function BillingDetails() {
             <input
               type="text"
               id="customerName"
-              className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+              className="mt-2 h-14 w-full min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
               placeholder="Alexei Ward"
             />
           </div>
@@ -30,7 +30,7 @@ export default function BillingDetails() {
             <input
               type="email"
               id="customerEmail"
-              className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+              className="mt-2 h-14 w-full min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
               placeholder="alexei@gmail.com"
             />
           </div>
@@ -44,7 +44,7 @@ export default function BillingDetails() {
             <input
               type="number"
               id="customerPhoneNumber"
-              className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+              className="mt-2 h-14 w-full min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
               placeholder="+1 202-555-0136"
             />
           </div>

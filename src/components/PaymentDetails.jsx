@@ -24,7 +24,7 @@ export default function PaymentDetails() {
             <p className="mb-5 sm:mt-4"> Payment Method</p>
             <div className="sm:mt-10 lg:flex lg:flex-col lg:gap-4">
               <div
-                className={`mt-4 flex h-14 w-[309px]   flex-row items-center gap-6 rounded-lg border pl-4 lg:mt-0 ${
+                className={`mt-4 flex h-14 min-w-[175px] flex-row   items-center gap-6 rounded-lg border pl-4 lg:mt-0 lg:w-[309px] ${
                   paymentMethods.eMoney ? "border-[#D87D4A] " : ""
                 }`}
               >
@@ -43,7 +43,7 @@ export default function PaymentDetails() {
                 </label>
               </div>
               <div
-                className={`mt-4 flex h-14 w-[309px]   flex-row items-center gap-6 rounded-lg border pl-4 lg:mt-0 ${
+                className={`mt-4 flex h-14 min-w-[175px] flex-row  items-center gap-6 rounded-lg border pl-4 lg:mt-0 lg:w-[309px] ${
                   paymentMethods.cashOnDelivery ? "border-[#D87D4A] " : ""
                 }`}
               >
@@ -67,7 +67,7 @@ export default function PaymentDetails() {
           </div>
           {paymentMethods.eMoney ? (
             <div className="sm:flex sm:flex-row sm:justify-between">
-              <div className="font-bold lg:flex lg:flex-col">
+              <div className="min-w-[175px] font-bold lg:flex lg:w-[309px] lg:flex-col">
                 <label
                   className="mt-4 text-[12px] tracking-[-0.214] "
                   htmlFor="e-MoneyNumber"
@@ -77,11 +77,11 @@ export default function PaymentDetails() {
                 <input
                   type="number"
                   id="e-MoneyNumber"
-                  className="mt-2 h-14 w-[309px]  rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+                  className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
                   placeholder="238521993"
                 />
               </div>
-              <div className="font-bold lg:flex lg:flex-col">
+              <div className="min-w-[175px] font-bold lg:flex lg:w-[309px] lg:flex-col">
                 <label
                   className="mt-4 text-[12px] tracking-[-0.214] "
                   htmlFor="e-MoneyPIN"
@@ -91,7 +91,7 @@ export default function PaymentDetails() {
                 <input
                   type="number"
                   id="e-MoneyPIN"
-                  className="mt-2 h-14 w-[309px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+                  className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
                   placeholder="6891"
                 />
               </div>

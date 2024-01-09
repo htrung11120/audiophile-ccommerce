@@ -16,12 +16,12 @@ export default function ShippingInfor() {
             <input
               type="text"
               id="customerAdress"
-              className="mt-2 h-14 w-full rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+              className="mt-2 h-14 w-full min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
               placeholder="1137 Williams Avenue"
             />
           </div>
           <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:gap-4">
-            <div className="flex w-[309px] flex-col gap-2 font-bold">
+            <div className="flex flex-col gap-2 font-bold lg:w-[309px] ">
               <label
                 className="mt-4 text-[12px] tracking-[-0.214] "
                 htmlFor="zipCode"
@@ -31,11 +31,11 @@ export default function ShippingInfor() {
               <input
                 type="number"
                 id="zipCode"
-                className="h-14 rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+                className="h-14 min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
                 placeholder="10001"
               />
             </div>
-            <div className="flex w-[309px] flex-col gap-2 font-bold">
+            <div className="flex flex-col gap-2 font-bold lg:w-[309px] ">
               <label
                 className="mt-4 text-[12px] tracking-[-0.214] "
                 htmlFor="city"
@@ -45,11 +45,11 @@ export default function ShippingInfor() {
               <input
                 type="text"
                 id="city"
-                className="h-14 rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+                className="h-14 min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
                 placeholder="New York"
               />
             </div>
-            <div className="flex w-[309px] flex-col gap-2 font-bold">
+            <div className="flex flex-col gap-2 font-bold lg:w-[309px] ">
               <label
                 className="mt-4 text-[12px] tracking-[-0.214] "
                 htmlFor="country"
@@ -59,7 +59,7 @@ export default function ShippingInfor() {
               <input
                 type="text"
                 id="country"
-                className="h-14 rounded-lg border border-[#CFCFCF] pl-6 text-sm"
+                className="h-14 min-w-[175px] rounded-lg border border-[#CFCFCF] pl-6 text-sm"
                 placeholder="Country"
               />
             </div>

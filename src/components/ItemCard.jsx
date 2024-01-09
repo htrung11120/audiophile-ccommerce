@@ -1,10 +1,10 @@
 import OrangeButton from "./OrangeButton";
 export default function ItemCard({ data, reverse = false }) {
-  const newItem = data.new;
-  const categoryImage = data.categoryImage.mobile;
-  const categoryImageTablet = data.categoryImage.tablet;
-  const categoryImageDesktop = data.categoryImage.desktop;
-  const description = data.description;
+  const newItem = data?.new;
+  const categoryImage = data?.categoryImage.mobile;
+  const categoryImageTablet = data?.categoryImage.tablet;
+  const categoryImageDesktop = data?.categoryImage.desktop;
+  const description = data?.description;
   const rowReverse = !reverse ? "flex-row" : "flex-row-reverse";
   return (
     <div

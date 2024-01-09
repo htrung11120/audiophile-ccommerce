@@ -15,8 +15,12 @@ import ItemDetail from "./components/ItemDetail.jsx";
 import ItemDescription from "./components/ItemDescription.jsx";
 import Checkout from "./Pages/Checkout.jsx";
 import Success from "./components/Success.jsx";
-
+import NotFound404 from "./components/NotFound404.jsx";
 const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <NotFound404 />,
+  },
   {
     path: "/home",
     element: <Home />,

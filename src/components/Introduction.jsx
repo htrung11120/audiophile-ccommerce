@@ -1,9 +1,9 @@
 export default function Introduction() {
   return (
     <div className="mx-6 mb-32 mt-32 flex flex-col gap-8 sm:mx-10 lg:mx-[165px] lg:flex-row-reverse lg:gap-[125px]">
-      <div className="h-[300px] rounded-lg bg-[url(/src/assets/shared/mobile/image-best-gear.jpg)] bg-contain sm:hidden "></div>
-      <div className="hidden h-[300px] rounded-lg bg-[url(/src/assets/shared/tablet/image-best-gear.jpg)] bg-contain sm:block lg:hidden "></div>
-      <div className="hidden h-[588px] w-[540px] rounded-lg bg-[url(/src/assets/shared/desktop/image-best-gear.jpg)] bg-contain lg:block "></div>
+      <div className="h-[300px] rounded-lg bg-[url(/assets/shared/mobile/image-best-gear.jpg)] bg-contain sm:hidden "></div>
+      <div className="hidden h-[300px] rounded-lg bg-[url(/assets/shared/tablet/image-best-gear.jpg)] bg-contain sm:block lg:hidden "></div>
+      <div className="hidden h-[588px] w-[540px] rounded-lg bg-[url(/assets/shared/desktop/image-best-gear.jpg)] bg-contain lg:block "></div>
 
       <div className="lg:mr-auto lg:h-[295px] lg:w-[445px] lg:self-start">
         <p className="mb-6 text-center text-[28px] font-bold uppercase sm:mx-16 sm:text-[40px] sm:leading-[44px] sm:tracking-[1.429px] lg:mx-0 lg:text-start">

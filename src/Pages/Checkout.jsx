@@ -12,7 +12,6 @@ export default function Checkout() {
   function formHandleSubmit(e) {
     e.preventDefault();
     setIsModalOpen(true);
-    console.log(isModalOpen);
     navigate("/checkout/success");
   }
 

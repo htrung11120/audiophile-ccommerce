@@ -10,11 +10,11 @@ export default function ItemCard({ data, reverse = false }) {
     <div
       className={`flex flex-col items-center  justify-center  sm:mx-10 lg:mx-[165px] lg:gap-[125px] lg:${rowReverse}`}
     >
-      <img src={categoryImage} alt="" className="rounded-lg md:hidden" />
+      <img src={categoryImage} alt="" className="rounded-lg sm:hidden" />
       <img
         src={categoryImageTablet}
         alt=""
-        className="hidden rounded-lg  sm:h-[352px]"
+        className="hidden rounded-lg  sm:block sm:h-[352px]"
       />
       <img
         src={categoryImageDesktop}

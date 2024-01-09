@@ -20,7 +20,7 @@ export default function ShippingInfor() {
               placeholder="1137 Williams Avenue"
             />
           </div>
-          <div className="flex sm:flex-wrap sm:justify-between lg:flex-row lg:gap-4">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:gap-4">
             <div className="flex w-[309px] flex-col gap-2 font-bold">
               <label
                 className="mt-4 text-[12px] tracking-[-0.214] "

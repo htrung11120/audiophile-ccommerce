@@ -45,7 +45,6 @@ export default function CartItems() {
       return total + item.price * item.quantity;
     }, 0);
   };
-  console.log(state);
   return (
     <div className="flex flex-col sm:gap-4">
       {state.cart.length === 0 || null ? (

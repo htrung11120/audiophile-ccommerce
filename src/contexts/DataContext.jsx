@@ -1,4 +1,10 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import useFetchData from "../hooks/useFetchData";
 import cartImg from "../utils/cartImgList";
 const DataContext = createContext();
@@ -6,9 +12,16 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { data, loading, error } = useFetchData("/data/data.json");
-  const [state, dispatch] = useReducer(reducer, {
-    cart: [],
-  });
+
+  const storedCart = localStorage.getItem("localCart");
+  const initialCartState = storedCart ? JSON.parse(storedCart) : { cart: [] };
+
+  const [state, dispatch] = useReducer(reducer, initialCartState);
+
+  useEffect(() => {
+    localStorage.setItem("localCart", JSON.stringify(state));
+    console.log("cart is changed", state);
+  }, [state]);
 
   function setCartQuantity(updatedCart) {
     dispatch({ type: "SET_CART_QUANTITY", cart: updatedCart });

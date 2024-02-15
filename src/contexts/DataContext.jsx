@@ -17,7 +17,7 @@ export const DataProvider = ({ children }) => {
   const initialCartState = storedCart ? JSON.parse(storedCart) : { cart: [] };
 
   const [state, dispatch] = useReducer(reducer, initialCartState);
-
+  console.log(data);
   useEffect(() => {
     localStorage.setItem("localCart", JSON.stringify(state));
     console.log("cart is changed", state);
